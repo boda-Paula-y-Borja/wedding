@@ -19,16 +19,40 @@ body {
   margin: 0;
   font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   color: var(--text);
-  /* Fondos en esquinas: superior izquierda y inferior derecha */
+  /* Color base; las esquinas se renderizan con pseudo-elementos fijos */
   background-color: var(--bg);
-  background-image: url('../assets/fondo_esquina_superior_iz.png'), url('../assets/fondo_esquina_inf_derecha.png');
-  background-repeat: no-repeat, no-repeat;
-  background-position: left top, right bottom;
-  background-size: min(40vw, 520px) auto, min(40vw, 520px) auto;
-  background-attachment: fixed, fixed;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Esquinas fijas: superior izquierda y inferior derecha */
+body::before, body::after {
+  content: "";
+  position: fixed;
+  pointer-events: none;
+  inset: 0;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+body::before {
+  background-image: url('../assets/fondo_esquina_superior_iz.png');
+  background-position: left top;
+  background-size: clamp(220px, 40vw, 560px) auto;
+}
+
+body::after {
+  background-image: url('../assets/fondo_esquina_inf_derecha.png');
+  background-position: right bottom;
+  background-size: clamp(220px, 40vw, 560px) auto;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 700px) {
+  body::before, body::after {
+    background-size: clamp(240px, 60vw, 640px) auto;
+  }
 }
 
 h1, h2, h3, .display {
@@ -80,6 +104,14 @@ h1.display {
 @media (min-width: 900px) {
   .hero { grid-template-columns: 1.1fr 1fr; }
   .hero-content { text-align: center; padding: 24px 5vw; }
+}
+
+/* Ajustes móviles: fallback para fondos fijos y tamaño mayor */
+@media (max-width: 700px) {
+  body {
+    background-attachment: scroll, scroll; /* iOS/Android no soportan bien fixed */
+    background-size: 70vw auto, 70vw auto; /* hacerlas más grandes en móvil */
+  }
 }
 
 /* Story */
@@ -155,8 +187,8 @@ input[type="text"], select, textarea {
   inset: 0;
   background: rgba(255, 255, 255, 0.72);
   pointer-events: none;
-  z-index: 0;
+  z-index: 2; /* por encima de las esquinas fijas del body */
 }
-.site-main > * { position: relative; z-index: 1; }
+.site-main > * { position: relative; z-index: 3; }
 
 

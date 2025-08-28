@@ -30,6 +30,12 @@ h1, h2, h3, .display {
   letter-spacing: 0.2px;
 }
 
+/* Tipografía más sutil para nombres */
+.display {
+  font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  font-weight: 600;
+}
+
 h1.display {
   font-size: clamp(2.4rem, 6vw, 4rem);
   margin: 0 0 0.5rem 0;
@@ -67,7 +73,7 @@ h1.display {
 
 @media (min-width: 900px) {
   .hero { grid-template-columns: 1.1fr 1fr; }
-  .hero-content { text-align: left; padding-right: 24px; }
+  .hero-content { text-align: center; padding: 24px 5vw; }
 }
 
 /* Story */
@@ -90,15 +96,29 @@ h1.display {
 .map-wrapper iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 
 /* Countdown */
+.countdown { padding-top: 24px; }
 .countdown .countdown-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
+  display: grid; grid-template-columns: repeat(4, minmax(100px, 1fr)); gap: 16px;
 }
 .countdown .time {
-  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
-  padding: 16px; text-align: center; box-shadow: var(--shadow);
+  background: linear-gradient(180deg, #ffffff, #f6f4f1);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 18px; text-align: center; box-shadow: 0 12px 30px rgba(0,0,0,0.07);
 }
-.countdown .time span { display: block; font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 600; }
-.countdown .time small { color: var(--muted); }
+.countdown .time span { display: block; font-size: clamp(1.8rem, 4.2vw, 2.6rem); font-weight: 600; letter-spacing: 0.5px; }
+.countdown .time small { color: var(--muted); font-variant-numeric: tabular-nums; }
+
+/* Foto ubicación */
+.location-photo { margin: 12px 0 16px; }
+.location-photo img { width: 100%; height: auto; border-radius: var(--radius); box-shadow: var(--shadow); }
+
+/* Patrón de fondo (opcional) */
+.with-pattern {
+  background-image: url('../assets/patrón.png');
+  background-size: 280px 280px;
+  background-repeat: repeat;
+}
 
 /* Form */
 .field { display: grid; gap: 8px; margin-bottom: 16px; }

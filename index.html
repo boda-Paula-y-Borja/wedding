@@ -7,7 +7,7 @@
     <meta name="description" content="Invitación de boda digital de Paula y Borja. 11 de abril de 2026, en La Masía La Calzada." />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@400;600&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/main.css" />
   </head>
   <body>
@@ -22,7 +22,7 @@
       </nav>
     </header>
 
-    <main id="contenido" class="site-main">
+    <main id="contenido" class="site-main with-pattern">
       <!-- Portada -->
       <section id="portada" class="section hero" aria-labelledby="titulo-portada">
         <div class="hero-content">
@@ -32,6 +32,19 @@
         <figure class="hero-media">
           <img src="assets/portada.jpg" alt="Fotografía de Paula y Borja" />
         </figure>
+      </section>
+
+      <!-- Contador regresivo (movido más arriba) -->
+      <section id="contador" class="section countdown" aria-labelledby="titulo-contador">
+        <div class="container">
+          <h2 id="titulo-contador">Cuenta atrás</h2>
+          <div class="countdown-grid" role="timer" aria-live="polite">
+            <div class="time"><span id="days">0</span><small>días</small></div>
+            <div class="time"><span id="hours">0</span><small>horas</small></div>
+            <div class="time"><span id="minutes">0</span><small>min</small></div>
+            <div class="time"><span id="seconds">0</span><small>s</small></div>
+          </div>
+        </div>
       </section>
 
       <!-- Nuestra historia -->
@@ -64,10 +77,13 @@
         <div class="container">
           <h2 id="titulo-ubicacion">Ubicación</h2>
           <p>La Masía La Calzada</p>
+          <figure class="location-photo">
+            <img src="assets/masia.png" alt="Imagen del lugar de la celebración" />
+          </figure>
           <div class="map-wrapper">
             <iframe
               title="Mapa de La Masía La Calzada"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2992.0000000000005!2d-0.376389!3d39.469907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sLa%20Mas%C3%ADa%20La%20Calzada!5e0!3m2!1ses!2ses!4v1700000000000"
+              src="https://maps.google.com/maps?q=Partida%20De%20la%20Marjal%2C%20259%2C%2046740%20Carcaixent%2C%20Valencia&output=embed"
               width="600"
               height="450"
               style="border:0;"
@@ -75,19 +91,6 @@
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
             ></iframe>
-          </div>
-        </div>
-      </section>
-
-      <!-- Contador regresivo -->
-      <section id="contador" class="section countdown" aria-labelledby="titulo-contador">
-        <div class="container">
-          <h2 id="titulo-contador">Cuenta atrás</h2>
-          <div class="countdown-grid" role="timer" aria-live="polite">
-            <div class="time"><span id="days">0</span><small>días</small></div>
-            <div class="time"><span id="hours">0</span><small>horas</small></div>
-            <div class="time"><span id="minutes">0</span><small>min</small></div>
-            <div class="time"><span id="seconds">0</span><small>s</small></div>
           </div>
         </div>
       </section>

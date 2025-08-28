@@ -19,7 +19,12 @@ body {
   margin: 0;
   font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   color: var(--text);
-  background: var(--bg) url('../assets/fondo.png') no-repeat center top / cover fixed;
+  background-color: var(--bg);
+  background-image: url('../assets/fondo.png');
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100% auto; /* ajusta al ancho del viewport */
+  background-attachment: scroll; /* que se mueva con la página */
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

@@ -15,6 +15,13 @@
 /* Reset y tipografía */
 * { box-sizing: border-box; }
 html, body { height: 100%; }
+@supports (height: 100svh) {
+  /* corregir alturas y zoom en móviles con barras dinámicas */
+  :root { --vh: 1svh; }
+}
+@supports not (height: 100svh) {
+  :root { --vh: 1vh; }
+}
 body {
   margin: 0;
   font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -104,6 +111,16 @@ h1.display {
 @media (min-width: 900px) {
   .hero { grid-template-columns: 1.1fr 1fr; }
   .hero-content { text-align: center; padding: 24px 5vw; }
+}
+
+/* Afinados móviles */
+@media (max-width: 700px) {
+  .section { padding: 40px 0; }
+  h1.display { font-size: clamp(2rem, 9vw, 3rem); }
+  .gallery img { height: 160px; }
+  .countdown .countdown-grid { grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .countdown .time { padding: 12px; border-radius: 12px; }
+  .site-nav { flex-wrap: wrap; gap: 8px; }
 }
 
 /* Ajustes móviles: fallback para fondos fijos y tamaño mayor */

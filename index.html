@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@400;600&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="preload" as="image" href="assets/foto portada.jpg" imagesrcset="assets/foto portada.jpg 1600w" imagesizes="(min-width: 900px) 50vw, 100vw">
     <link rel="stylesheet" href="styles/main.css" />
   </head>
   <body>
@@ -30,7 +31,10 @@
           <p class="subtitle">11 de abril de 2026 · La Masía La Calzada</p>
         </div>
         <figure class="hero-media">
-          <img src="assets/portada.jpg" alt="Fotografía de Paula y Borja" />
+          <picture>
+            <source type="image/webp" srcset="assets/foto portada.webp" />
+            <img src="assets/foto portada.jpg" alt="Fotografía de Paula y Borja" decoding="async" fetchpriority="high" />
+          </picture>
         </figure>
       </section>
 
@@ -64,10 +68,22 @@
         <div class="container">
           <h2 id="titulo-galeria">Galería</h2>
           <div class="grid">
-            <img src="assets/galeria-1.jpg" alt="Recuerdo 1" />
-            <img src="assets/galeria-2.jpg" alt="Recuerdo 2" />
-            <img src="assets/galeria-3.jpg" alt="Recuerdo 3" />
-            <img src="assets/galeria-4.jpg" alt="Recuerdo 4" />
+            <picture>
+              <source type="image/webp" srcset="assets/Recuerdo1.webp" />
+              <img src="assets/Recuerdo1.jpg" alt="Recuerdo 1" loading="lazy" decoding="async" />
+            </picture>
+            <picture>
+              <source type="image/webp" srcset="assets/Recuerdo2.webp" />
+              <img src="assets/Recuerdo2.jpg" alt="Recuerdo 2" loading="lazy" decoding="async" />
+            </picture>
+            <picture>
+              <source type="image/webp" srcset="assets/Recuerdo3.webp" />
+              <img src="assets/Recuerdo3.jpg" alt="Recuerdo 3" loading="lazy" decoding="async" />
+            </picture>
+            <picture>
+              <source type="image/webp" srcset="assets/Recuerdo4.webp" />
+              <img src="assets/Recuerdo4.jpg" alt="Recuerdo 4" loading="lazy" decoding="async" />
+            </picture>
           </div>
         </div>
       </section>
@@ -78,7 +94,10 @@
           <h2 id="titulo-ubicacion">Ubicación</h2>
           <p>La Masía La Calzada</p>
           <figure class="location-photo">
-            <img src="assets/masia.png" alt="Imagen del lugar de la celebración" />
+            <picture>
+              <source type="image/webp" srcset="assets/imagen masia.webp" />
+              <img src="assets/imagen masia.jpg" alt="Imagen del lugar de la celebración" loading="lazy" decoding="async" />
+            </picture>
           </figure>
           <div class="map-wrapper">
             <iframe

@@ -15,20 +15,17 @@
 /* Reset y tipografía */
 * { box-sizing: border-box; }
 html, body { height: 100%; }
-html {
-  height: 100%;
-  background-image: url('../assets/fondo.png');
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-attachment: scroll; /* se desplaza con la página */
-  background-size: 100% 100%; /* ajusta ancho y alto al tamaño del documento */
-}
-
 body {
   margin: 0;
   font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   color: var(--text);
-  background-color: var(--bg); /* color de fondo bajo la imagen */
+  /* Fondos en esquinas: superior izquierda y inferior derecha */
+  background-color: var(--bg);
+  background-image: url('../assets/fondo_esquina_superior_iz.png'), url('../assets/fondo_esquina_inf_derecha.png');
+  background-repeat: no-repeat, no-repeat;
+  background-position: left top, right bottom;
+  background-size: min(40vw, 520px) auto, min(40vw, 520px) auto;
+  background-attachment: fixed, fixed;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -149,5 +146,17 @@ input[type="text"], select, textarea {
 
 /* Utilidades */
 .visually-hidden { position: absolute !important; height: 1px; width: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px); white-space: nowrap; }
+
+/* Capa traslúcida sobre el fondo para mejorar legibilidad (cubre hasta el formulario) */
+.site-main { position: relative; }
+.site-main::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.72);
+  pointer-events: none;
+  z-index: 0;
+}
+.site-main > * { position: relative; z-index: 1; }
 
 

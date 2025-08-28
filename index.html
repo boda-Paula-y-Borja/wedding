@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Paula & Borja · 11 abril 2026</title>
+    <meta name="description" content="Invitación de boda digital de Paula y Borja. 11 de abril de 2026, en La Masía La Calzada." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <header class="site-header" role="banner">
+      <nav class="site-nav" aria-label="Secciones de la invitación">
+        <a href="#portada">Portada</a>
+        <a href="#historia">Nuestra historia</a>
+        <a href="#galeria">Galería</a>
+        <a href="#ubicacion">Ubicación</a>
+        <a href="#contador">Cuenta atrás</a>
+        <a href="#asistencia">Asistencia</a>
+      </nav>
+    </header>
+
+    <main id="contenido" class="site-main">
+      <!-- Portada -->
+      <section id="portada" class="section hero" aria-labelledby="titulo-portada">
+        <div class="hero-content">
+          <h1 id="titulo-portada" class="display">Paula & Borja</h1>
+          <p class="subtitle">11 de abril de 2026 · La Masía La Calzada</p>
+        </div>
+        <figure class="hero-media">
+          <img src="assets/portada.jpg" alt="Fotografía de Paula y Borja" />
+        </figure>
+      </section>
+
+      <!-- Nuestra historia -->
+      <section id="historia" class="section story" aria-labelledby="titulo-historia">
+        <div class="container">
+          <h2 id="titulo-historia">Nuestra historia</h2>
+          <p>
+            Nos conocimos, reímos, viajamos y hoy queremos celebrar con
+            vosotros el siguiente capítulo. Será un día para recordar y nos
+            encantará contar con tu compañía.
+          </p>
+        </div>
+      </section>
+
+      <!-- Galería -->
+      <section id="galeria" class="section gallery" aria-labelledby="titulo-galeria">
+        <div class="container">
+          <h2 id="titulo-galeria">Galería</h2>
+          <div class="grid">
+            <img src="assets/galeria-1.jpg" alt="Recuerdo 1" />
+            <img src="assets/galeria-2.jpg" alt="Recuerdo 2" />
+            <img src="assets/galeria-3.jpg" alt="Recuerdo 3" />
+            <img src="assets/galeria-4.jpg" alt="Recuerdo 4" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Ubicación -->
+      <section id="ubicacion" class="section location" aria-labelledby="titulo-ubicacion">
+        <div class="container">
+          <h2 id="titulo-ubicacion">Ubicación</h2>
+          <p>La Masía La Calzada</p>
+          <div class="map-wrapper">
+            <iframe
+              title="Mapa de La Masía La Calzada"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2992.0000000000005!2d-0.376389!3d39.469907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sLa%20Mas%C3%ADa%20La%20Calzada!5e0!3m2!1ses!2ses!4v1700000000000"
+              width="600"
+              height="450"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contador regresivo -->
+      <section id="contador" class="section countdown" aria-labelledby="titulo-contador">
+        <div class="container">
+          <h2 id="titulo-contador">Cuenta atrás</h2>
+          <div class="countdown-grid" role="timer" aria-live="polite">
+            <div class="time"><span id="days">0</span><small>días</small></div>
+            <div class="time"><span id="hours">0</span><small>horas</small></div>
+            <div class="time"><span id="minutes">0</span><small>min</small></div>
+            <div class="time"><span id="seconds">0</span><small>s</small></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Formulario de asistencia -->
+      <section id="asistencia" class="section rsvp" aria-labelledby="titulo-asistencia">
+        <div class="container">
+          <h2 id="titulo-asistencia">Confirma tu asistencia</h2>
+
+          <form id="rsvp-form" novalidate>
+            <div class="field">
+              <label for="nombre">Nombre y apellidos</label>
+              <input id="nombre" name="nombre" type="text" required autocomplete="name" />
+              <p class="error" id="error-nombre" hidden>Por favor, indica tu nombre completo.</p>
+            </div>
+
+            <fieldset class="field">
+              <legend>¿Asistirás?</legend>
+              <label class="choice">
+                <input type="radio" name="asistencia" value="si" required />
+                <span>Sí</span>
+              </label>
+              <label class="choice">
+                <input type="radio" name="asistencia" value="no" required />
+                <span>No</span>
+              </label>
+              <p class="error" id="error-asistencia" hidden>Indica si asistirás.</p>
+            </fieldset>
+
+            <div class="field">
+              <label for="alergenos">Alérgenos e intolerancias</label>
+              <input id="alergenos" name="alergenos" type="text" placeholder="Ej.: gluten, lactosa..." required />
+              <p class="hint">Escribe "ninguno" si no procede.</p>
+              <p class="error" id="error-alergenos" hidden>Indica si tienes alguna restricción.</p>
+            </div>
+
+            <div class="field">
+              <label for="bus">Opción de bus</label>
+              <select id="bus" name="bus" required>
+                <option value="" disabled selected>Elige una opción</option>
+                <option value="ida">Ida</option>
+                <option value="ida_vuelta">Ida y vuelta</option>
+                <option value="ninguno">Ninguno</option>
+              </select>
+              <p class="error" id="error-bus" hidden>Selecciona una opción de bus.</p>
+            </div>
+
+            <div class="field">
+              <label for="cancion">Canción que no puede faltar</label>
+              <input id="cancion" name="cancion" type="text" required />
+              <p class="error" id="error-cancion" hidden>Cuéntanos una canción.</p>
+            </div>
+
+            <div class="field">
+              <label for="mensaje">Mensaje a los novios (opcional)</label>
+              <textarea id="mensaje" name="mensaje" rows="4" placeholder="Déjanos unas palabras…"></textarea>
+            </div>
+
+            <button type="submit" class="btn" aria-label="Enviar confirmación">Enviar</button>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <p>© 2026 Paula & Borja</p>
+      </div>
+    </footer>
+
+    <script src="scripts/main.js" defer></script>
+  </body>
+  </html>
+
+

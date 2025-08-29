@@ -113,7 +113,7 @@ h1.display {
   .hero-content { text-align: center; padding: 24px 5vw; }
 }
 
-/* Afinados móviles */
+/* Ajustes móviles consolidados */
 @media (max-width: 700px) {
   .section { padding: 40px 0; }
   h1.display { font-size: clamp(2rem, 9vw, 3rem); }
@@ -124,13 +124,9 @@ h1.display {
   .countdown .time span { font-size: clamp(1.2rem, 6.5vw, 1.6rem); }
   .countdown .time small { font-size: 0.8rem; }
   .site-nav { flex-wrap: wrap; gap: 8px; }
-}
-
-/* Ajustes móviles: fallback para fondos fijos y tamaño mayor */
-@media (max-width: 700px) {
-  body {
-    background-attachment: scroll, scroll; /* iOS/Android no soportan bien fixed */
-    background-size: 70vw auto, 70vw auto; /* hacerlas más grandes en móvil */
+  /* Fondos de esquinas más grandes en móvil */
+  body::before, body::after {
+    background-size: clamp(240px, 60vw, 640px) auto;
   }
 }
 

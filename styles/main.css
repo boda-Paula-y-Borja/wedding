@@ -119,7 +119,7 @@ h1.display {
   h1.display { font-size: clamp(2rem, 9vw, 3rem); }
   .gallery img { height: 160px; }
   /* Ajuste fino de la cuenta atrás para que no se desescale */
-  .countdown .countdown-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .countdown .countdown-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; grid-auto-flow: row; }
   .countdown .time { padding: 10px; border-radius: 12px; }
   .countdown .time span { font-size: clamp(1.2rem, 6.5vw, 1.6rem); }
   .countdown .time small { font-size: 0.8rem; }

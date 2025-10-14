@@ -163,6 +163,15 @@ h1.display {
 .countdown .time span { display: block; font-size: clamp(1.8rem, 4.2vw, 2.6rem); font-weight: 600; letter-spacing: 0.5px; }
 .countdown .time small { color: var(--muted); font-variant-numeric: tabular-nums; }
 
+/* Ajuste específico móvil (colocado después para ganar en cascada) */
+@media (max-width: 700px) {
+  .countdown .countdown-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    grid-auto-flow: row;
+  }
+}
+
 /* Foto ubicación */
 .location-photo { margin: 12px 0 16px; }
 .location-photo img { width: 100%; height: auto; border-radius: var(--radius); box-shadow: var(--shadow); }

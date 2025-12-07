@@ -92,15 +92,6 @@
         </div>
       </section>
 
-      <!-- Lightbox Modal -->
-      <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-title" hidden>
-        <button class="lightbox-close" aria-label="Cerrar imagen ampliada">&times;</button>
-        <div class="lightbox-content">
-          <img id="lightbox-image" src="" alt="" />
-          <p id="lightbox-title" class="visually-hidden">Imagen ampliada</p>
-        </div>
-      </div>
-
       <!-- Ubicación -->
       <section id="ubicacion" class="section location" aria-labelledby="titulo-ubicacion">
         <div class="container">
@@ -124,8 +115,22 @@
         </div>
       </section>
 
+      <!-- Información adicional -->
+      <section id="asistencia" class="section info" aria-labelledby="titulo-info">
+        <div class="container">
+          <p class="info-text">
+            Tu presencia hará nuestro día aún más especial. Por favor, confirma si podrás estar con nosotros antes del 28 de marzo, y si necesitarás utilizar el autobús.
+          </p>
+          <div class="contact-info">
+            <p><strong>Borja:</strong> <a href="tel:654447012">654447012</a></p>
+            <p><strong>Paula:</strong> <a href="tel:661488061">661488061</a></p>
+            <p><strong>IBAN:</strong> ES64 2100 2369 5402 0040 4004</p>
+          </div>
+        </div>
+      </section>
+
       <!-- Formulario de asistencia -->
-      <section id="asistencia" class="section rsvp" aria-labelledby="titulo-asistencia">
+      <section class="section rsvp" aria-labelledby="titulo-asistencia">
         <div class="container">
           <h2 id="titulo-asistencia">Confirma tu asistencia</h2>
 
@@ -151,7 +156,7 @@
 
             <div class="field">
               <label for="alergenos">Alérgenos e intolerancias</label>
-              <input id="alergenos" name="alergenos" type="text" placeholder="Ej.: gluten, lactosa..." required />
+              <input id="alergenos" name="alergenos" type="text" placeholder="Ej.: gluten, lactosa..." />
               <p class="hint">Escribe "ninguno" si no procede.</p>
               <p class="error" id="error-alergenos" hidden>Indica si tienes alguna restricción.</p>
             </div>
@@ -159,17 +164,18 @@
             <div class="field">
               <label for="bus">Opción de bus</label>
               <select id="bus" name="bus" required>
-                <option value="" disabled selected>Elige una opción</option>
+                <option value="" disabled selected>Selecciona una opción...</option>
+                <option value="no_necesito">No necesito</option>
                 <option value="ida">Ida</option>
+                <option value="vuelta">Vuelta</option>
                 <option value="ida_vuelta">Ida y vuelta</option>
-                <option value="ninguno">Ninguno</option>
               </select>
               <p class="error" id="error-bus" hidden>Selecciona una opción de bus.</p>
             </div>
 
             <div class="field">
               <label for="cancion">Canción que no puede faltar</label>
-              <input id="cancion" name="cancion" type="text" required />
+              <input id="cancion" name="cancion" type="text" />
               <p class="error" id="error-cancion" hidden>Cuéntanos una canción.</p>
             </div>
 
@@ -181,20 +187,6 @@
             <button type="submit" class="btn" aria-label="Enviar confirmación">Enviar</button>
             <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
           </form>
-        </div>
-      </section>
-
-      <!-- Información adicional -->
-      <section class="section info" aria-labelledby="titulo-info">
-        <div class="container">
-          <p class="info-text">
-            Tu presencia hará nuestro día aún más especial. Por favor, confirma si podrás estar con nosotros antes del 28 de marzo, y si necesitarás utilizar el autobús.
-          </p>
-          <div class="contact-info">
-            <p><strong>Borja:</strong> <a href="tel:654447012">654447012</a></p>
-            <p><strong>Paula:</strong> <a href="tel:661488061">661488061</a></p>
-            <p><strong>IBAN:</strong> ES64 2100 2369 5402 0040 4004</p>
-          </div>
         </div>
       </section>
     </main>

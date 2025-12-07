@@ -58,14 +58,8 @@ function validate(data) {
   showError('asistencia', !data.asistencia);
   if (!data.asistencia) valid = false;
 
-  showError('alergenos', !data.alergenos);
-  if (!data.alergenos) valid = false;
-
   showError('bus', !data.bus);
   if (!data.bus) valid = false;
-
-  showError('cancion', !data.cancion);
-  if (!data.cancion) valid = false;
 
   return valid;
 }
@@ -233,58 +227,5 @@ form?.addEventListener('submit', async (e) => {
   }
 })();
 
-// Lightbox functionality
-(function initLightbox() {
-  const lightbox = $('#lightbox');
-  const lightboxImage = $('#lightbox-image');
-  const lightboxTitle = $('#lightbox-title');
-  const lightboxClose = $('.lightbox-close');
-  const galleryImages = document.querySelectorAll('.gallery-image');
-
-  if (!lightbox || !lightboxImage) return;
-
-  function openLightbox(img) {
-    lightboxImage.src = img.src;
-    lightboxImage.alt = img.alt;
-    lightboxTitle.textContent = img.alt;
-    lightbox.hidden = false;
-  }
-
-  function closeLightbox() {
-    lightbox.hidden = true;
-  }
-
-  // Open lightbox on image click
-  galleryImages.forEach((img) => {
-    img.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      openLightbox(img);
-    });
-  });
-
-  // Close lightbox on close button click
-  if (lightboxClose) {
-    lightboxClose.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      closeLightbox();
-    });
-  }
-
-  // Close lightbox on background click
-  lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) {
-      closeLightbox();
-    }
-  });
-
-  // Close lightbox on Escape key
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && !lightbox.hidden) {
-      closeLightbox();
-    }
-  });
-})();
 
 

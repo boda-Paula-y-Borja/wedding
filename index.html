@@ -64,13 +64,22 @@
         <div class="container">
           <h2 id="titulo-galeria">Galería</h2>
           <div class="grid">
-            <img src="assets/Recuerdo1.jpg" alt="Recuerdo 1" />
-            <img src="assets/Recuerdo2.jpg" alt="Recuerdo 2" />
-            <img src="assets/Recuerdo3.jpg" alt="Recuerdo 3" />
-            <img src="assets/Recuerdo4.jpg" alt="Recuerdo 4" />
+            <img src="assets/Recuerdo1.jpg" alt="Recuerdo 1" class="gallery-image" />
+            <img src="assets/Recuerdo2.jpg" alt="Recuerdo 2" class="gallery-image" />
+            <img src="assets/Recuerdo3.jpg" alt="Recuerdo 3" class="gallery-image" />
+            <img src="assets/Recuerdo4.jpg" alt="Recuerdo 4" class="gallery-image gallery-image-bottom" />
           </div>
         </div>
       </section>
+
+      <!-- Lightbox Modal -->
+      <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-title" hidden>
+        <button class="lightbox-close" aria-label="Cerrar imagen ampliada">&times;</button>
+        <div class="lightbox-content">
+          <img id="lightbox-image" src="" alt="" />
+          <p id="lightbox-title" class="visually-hidden">Imagen ampliada</p>
+        </div>
+      </div>
 
       <!-- Ubicación -->
       <section id="ubicacion" class="section location" aria-labelledby="titulo-ubicacion">

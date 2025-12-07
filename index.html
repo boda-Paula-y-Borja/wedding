@@ -63,11 +63,31 @@
       <section id="galeria" class="section gallery" aria-labelledby="titulo-galeria">
         <div class="container">
           <h2 id="titulo-galeria">Galería</h2>
-          <div class="grid">
-            <img src="assets/Recuerdo1.jpg" alt="Recuerdo 1" class="gallery-image" />
-            <img src="assets/Recuerdo2.jpg" alt="Recuerdo 2" class="gallery-image" />
-            <img src="assets/Recuerdo3.jpg" alt="Recuerdo 3" class="gallery-image" />
-            <img src="assets/Recuerdo4.jpg" alt="Recuerdo 4" class="gallery-image gallery-image-bottom" />
+          <div class="carousel-wrapper">
+            <div class="carousel-container">
+              <div class="carousel-track">
+                <div class="carousel-slide active">
+                  <img src="assets/Recuerdo1.jpg" alt="Recuerdo 1" class="gallery-image" />
+                </div>
+                <div class="carousel-slide">
+                  <img src="assets/Recuerdo2.jpg" alt="Recuerdo 2" class="gallery-image" />
+                </div>
+                <div class="carousel-slide">
+                  <img src="assets/Recuerdo3.jpg" alt="Recuerdo 3" class="gallery-image" />
+                </div>
+                <div class="carousel-slide">
+                  <img src="assets/Recuerdo4.jpg" alt="Recuerdo 4" class="gallery-image gallery-image-bottom" />
+                </div>
+              </div>
+              <button class="carousel-btn carousel-btn-prev" aria-label="Imagen anterior">‹</button>
+              <button class="carousel-btn carousel-btn-next" aria-label="Imagen siguiente">›</button>
+            </div>
+            <div class="carousel-indicators" role="tablist" aria-label="Seleccionar imagen">
+              <button class="carousel-indicator active" aria-label="Imagen 1" data-slide="0" role="tab" aria-selected="true"></button>
+              <button class="carousel-indicator" aria-label="Imagen 2" data-slide="1" role="tab" aria-selected="false"></button>
+              <button class="carousel-indicator" aria-label="Imagen 3" data-slide="2" role="tab" aria-selected="false"></button>
+              <button class="carousel-indicator" aria-label="Imagen 4" data-slide="3" role="tab" aria-selected="false"></button>
+            </div>
           </div>
         </div>
       </section>
@@ -161,6 +181,20 @@
             <button type="submit" class="btn" aria-label="Enviar confirmación">Enviar</button>
             <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
           </form>
+        </div>
+      </section>
+
+      <!-- Información adicional -->
+      <section class="section info" aria-labelledby="titulo-info">
+        <div class="container">
+          <p class="info-text">
+            Tu presencia hará nuestro día aún más especial. Por favor, confirma si podrás estar con nosotros antes del 28 de marzo, y si necesitarás utilizar el autobús.
+          </p>
+          <div class="contact-info">
+            <p><strong>Borja:</strong> <a href="tel:654447012">654447012</a></p>
+            <p><strong>Paula:</strong> <a href="tel:661488061">661488061</a></p>
+            <p><strong>IBAN:</strong> ES64 2100 2369 5402 0040 4004</p>
+          </div>
         </div>
       </section>
     </main>

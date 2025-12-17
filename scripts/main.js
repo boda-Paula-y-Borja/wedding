@@ -1,5 +1,7 @@
 // Configuración
-const weddingDate = new Date('2026-04-11T12:00:00'); // Ajusta hora local del evento
+// Fixed wedding date/time in Europe/Madrid timezone: 11 April 2026, 13:00 (CEST, UTC+2)
+// This timestamp is computed in UTC so it is independent of the visitor's local timezone.
+const weddingDateMs = Date.UTC(2026, 3, 11, 11, 0, 0); // 13:00 Europe/Madrid == 11:00 UTC
 const googleAppsScriptEndpoint = 'https://script.google.com/macros/s/AKfycbxnvn6pMAScEtIj9nbBH15QdiL1Zu175nxFXcXaVFMwrWJ0ngJcPlWyp2aJzdO9G0xb/exec';
 
 // Utilidad: seleccionar
@@ -7,8 +9,8 @@ const $ = (sel) => document.querySelector(sel);
 
 // Cuenta atrás
 function updateCountdown() {
-  const now = new Date();
-  const diffMs = weddingDate - now;
+  const nowMs = Date.now();
+  const diffMs = weddingDateMs - nowMs;
   if (diffMs <= 0) {
     ['#days', '#hours', '#minutes', '#seconds'].forEach((id) => { $(id).textContent = '0'; });
     return;

@@ -132,7 +132,7 @@ h1.display {
 
 /* Story */
 .story .container { background: var(--surface); padding: 32px; border-radius: var(--radius); box-shadow: var(--shadow); }
-.story p { font-size: 1.05rem; }
+.story p { font-size: 1.3rem; }
 
 /* Gallery - Carousel */
 .carousel-wrapper {
